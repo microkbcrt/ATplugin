@@ -20,13 +20,18 @@ jobs:
         java-version: '21'
         distribution: 'adopt'
 
-    - name: Download Gradle Wrapper
+    - name: Download and set up Gradle Wrapper
       run: |
+        mkdir -p gradle/wrapper
         curl -L https://services.gradle.org/distributions/gradle-8.4-bin.zip -o gradle.zip
-        mkdir gradle
         unzip -q gradle.zip -d gradle
         mv gradle/gradle-8.4/bin/gradle gradlew
         chmod +x gradlew
+        echo "distributionBase=GRADLE_USER_HOME" > gradle/wrapper/gradle-wrapper.properties
+        echo "distributionPath=wrapper/dists" >> gradle/wrapper/gradle-wrapper.properties
+        echo "distributionUrl=https://services.gradle.org/distributions/gradle-8.4-bin.zip" >> gradle/wrapper/gradle-wrapper.properties
+        echo "zipStoreBase=GRADLE_USER_HOME" >> gradle/wrapper/gradle-wrapper.properties
+        echo "zipStorePath=wrapper/dists" >> gradle/wrapper/gradle-wrapper.properties
         rm -rf gradle gradle.zip
 
     - name: Run build with Gradle Wrapper
