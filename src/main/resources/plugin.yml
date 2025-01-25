@@ -1,0 +1,4 @@
+name: ATplugin
+version: 1.0
+main: com.example.AtPlugin
+api-version: 1.21
