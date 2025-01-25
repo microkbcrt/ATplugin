@@ -19,6 +19,12 @@ jobs:
       with:
         java-version: '21'
         distribution: 'adopt'
+    - name: Download Gradle Wrapper
+      run: |
+        curl -L https://github.com/gradle/gradle/raw/master/gradlew -o gradlew
+        curl -L https://github.com/gradle/gradle/raw/master/gradlew.bat -o gradlew.bat
+    - name: Make gradlew executable
+      run: chmod +x ./gradlew
     - name: Run build with Gradle Wrapper
       run: ./gradlew build
     - name: Upload artifact
