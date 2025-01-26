@@ -26,3 +26,12 @@ jobs:
 
     - name: Build with Gradle
       run: ./gradlew build
+
+    - name: List build directory
+      run: ls -la build/libs
+
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: ATPlugin
+        path: build/libs/*.jar
