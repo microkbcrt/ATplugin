@@ -1,5 +1,0 @@
-name: ATPlugin
-version: 1.0-SNAPSHOT
-main: com.kbcrt.atplugin.Main
-api-version: 1.21
-description: 玩家在聊天中提到其他玩家时，会发送提示信息
