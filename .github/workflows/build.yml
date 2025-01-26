@@ -19,6 +19,9 @@ jobs:
       with:
         java-version: '21'
         distribution: 'temurin'
+    - name: Initialize Gradle Wrapper
+      run: |
+        ./gradlew wrapper --gradle-version=8.2 --distribution-type=all
     - name: Build with Gradle
       run: ./gradlew build
     - name: Archive production artifacts
