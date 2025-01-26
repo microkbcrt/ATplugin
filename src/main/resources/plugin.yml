@@ -1,6 +1,0 @@
-name: ATPlugin
-main: com.kbcrt.atplugin.ATPlugin
-version: 1.0
-api-version: 1.21
-author: kbcrt
-description: A plugin that notifies players when they are mentioned in chat.
