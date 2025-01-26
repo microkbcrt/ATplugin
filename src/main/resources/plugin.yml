@@ -1,0 +1,5 @@
+name: ATPlugin
+version: 1.0
+main: com.kbcrt.atplugin.ATPlugin
+author: kbcrt
+api-version: 1.21
