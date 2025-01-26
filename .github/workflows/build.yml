@@ -18,5 +18,8 @@ jobs:
         distribution: 'temurin'  # 你可以选择 'zulu' 或其他分发版本
         java-version: '21'
 
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+
     - name: Build with Gradle
       run: ./gradlew build
